@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { FormsModule } from '@angular/forms';
+import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component'; // <-- NgModel lives here
 
 @NgModule({
   declarations: [
     AppComponent,
-    VehiclesComponent
+    VehiclesComponent,
+    VehicleDetailComponent
   ],
   imports: [
     BrowserModule,
