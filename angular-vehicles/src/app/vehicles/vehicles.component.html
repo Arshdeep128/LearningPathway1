@@ -1,7 +1,18 @@
+<h2>My Vehicles</h2>
+<ul class="vehicles">
+  <li *ngFor="let vehicle of vehicles">
+    <button [class.selected]="vehicle === selectedVehicle" type="button" (click)="onSelect(vehicle)">
+      <span class="badge">{{vehicle.id}}</span>
+      <span class="name">{{vehicle.name}}</span>
+    </button>
+  </li>
+</ul>
 
-<h2>{{vehicle.name | uppercase}} Details</h2>
-<div><span>id: </span>{{vehicle.id}}</div>
-<div>
-    <label for="name">Vehicle Name: </label>
-    <input id="name" [(ngModel)]="vehicle.name" placeholder="name">
+<div *ngIf="selectedVehicle">
+  <h2>{{selectedVehicle.name | uppercase}} Details</h2>
+  <div>id: {{selectedVehicle.id}}</div>
+  <div>
+    <label for="vehicle-name">Vehicle name: </label>
+    <input id="vehicle-name" [(ngModel)]="selectedVehicle.name" placeholder="name">
   </div>
+</div>

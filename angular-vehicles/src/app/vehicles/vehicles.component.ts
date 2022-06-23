@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Vehicle } from '../vehicle';
-
+import { VEHICLES } from '../mock-vehicles';
 @Component({
   selector: 'app-vehicles',
   templateUrl: './vehicles.component.html',
@@ -8,15 +8,16 @@ import { Vehicle } from '../vehicle';
 })
 export class VehiclesComponent implements OnInit {
 
-  vehicle: Vehicle = {
 
-    id:1,
-    name: 'Car'
-  } ;
+  vehicles = VEHICLES;
+  selectedVehicle?: Vehicle;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onSelect(vehicle: Vehicle): void {
+    this.selectedVehicle = vehicle;
+  }
 }
